@@ -2,7 +2,7 @@
 using Shared.Infra.DTO;
 using Shared.Infra.Results;
 
-namespace BloodDonation.Services.Authorization.API.Extensions;
+namespace BloodDonation.Services.Donations.API.Extensions;
 
 public static class ResultExtension
 {

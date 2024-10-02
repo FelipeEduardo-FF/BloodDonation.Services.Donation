@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Microsoft.AspNetCore.Http;
 using Shared.Infra.HttpServices;
+using Shared.Infra.Configurations;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 
 
 namespace Shared.Infra

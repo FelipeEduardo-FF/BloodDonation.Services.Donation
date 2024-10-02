@@ -11,13 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Infra", "Shared\Shar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Domain", "Shared\Shared.Core\Shared.Domain.csproj", "{AA0D0139-2AF6-43DB-8F74-89645B2F1E72}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Services.Authorization.API", "CoreDomain\BloodDonation.Services.Authorization.API\BloodDonation.Services.Authorization.API.csproj", "{7597FBE2-1F26-48E9-9B41-2AAD69264A27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Services.Donations.API", "CoreDomain\BloodDonation.Services.Authorization.API\BloodDonation.Services.Donations.API.csproj", "{7597FBE2-1F26-48E9-9B41-2AAD69264A27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Services.Authorization.Application", "CoreDomain\BloodDonation.Services.Authorization.Application\BloodDonation.Services.Authorization.Application.csproj", "{BB5A0B20-84EA-4A33-AE98-8F887A3DA94D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Services.Donations.Application", "CoreDomain\BloodDonation.Services.Authorization.Application\BloodDonation.Services.Donations.Application.csproj", "{BB5A0B20-84EA-4A33-AE98-8F887A3DA94D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Services.Authorization.Domain", "CoreDomain\BloodDonation.Services.Authorization.Core\BloodDonation.Services.Authorization.Domain.csproj", "{AB7330B1-7A1A-49FA-A71E-F6E1EE3C575B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Services.Donations.Domain", "CoreDomain\BloodDonation.Services.Authorization.Core\BloodDonation.Services.Donations.Domain.csproj", "{AB7330B1-7A1A-49FA-A71E-F6E1EE3C575B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Services.Authorization.Infra", "CoreDomain\BloodDonation.Services.Authorization.Infra\BloodDonation.Services.Authorization.Infra.csproj", "{2B872A5D-5A44-446F-BDD6-1277509B4446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Services.Donations.Infra", "CoreDomain\BloodDonation.Services.Authorization.Infra\BloodDonation.Services.Donations.Infra.csproj", "{2B872A5D-5A44-446F-BDD6-1277509B4446}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
