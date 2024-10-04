@@ -3,6 +3,7 @@
     public class DonationInputModel
     {
         public int DonorId { get;  set; }
+        public string DonorName { get; set; } = string.Empty;
         public int QuantityML { get;  set; }
     }
 }
