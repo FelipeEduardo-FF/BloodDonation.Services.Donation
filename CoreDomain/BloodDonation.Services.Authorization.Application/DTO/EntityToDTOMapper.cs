@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using BloodDonation.Services.Donations.Application.DTO.InputModels;
+using BloodDonation.Services.Donations.Application.DTO.ViewModels;
+using BloodDonation.Services.Donations.Domain.Entities;
 
 namespace BloodDonation.Services.Donations.Application.DTO
 {
@@ -6,6 +9,8 @@ namespace BloodDonation.Services.Donations.Application.DTO
     {
         public EntityToDTOMapper()
         {
+            CreateMap<DonationInputModel, Donation>().ReverseMap();
+            CreateMap<DonationViewModel, Donation>().ReverseMap();
 
         }
     }

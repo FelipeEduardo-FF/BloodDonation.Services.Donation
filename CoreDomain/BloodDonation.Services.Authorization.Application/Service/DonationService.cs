@@ -59,11 +59,12 @@ namespace BloodDonation.Services.Donations.Application.Services
             if(donor is null)
                 return OperationResult.NotFound<int>("Donor is not found");
 
-            if (donor.Weight>50)
-                return OperationResult.BadRequest<int>("Donor weight below 50 kg");
+            if (donor.Weight < 50)
+                return OperationResult.BadRequest<int>("Donor's weight must be at least 50 kg.");
 
             if (donor.BirthDate > DateTime.UtcNow.AddYears(-18))
-                return OperationResult.BadRequest<int>("Donor must be over 18 years old.");
+                return OperationResult.BadRequest<int>("Donor must be at least 18 years old.");
+
 
             var lastDonation = await _donationRepository.GetLastDonationByDonorIdAsync(inputModel.DonorId);
 
