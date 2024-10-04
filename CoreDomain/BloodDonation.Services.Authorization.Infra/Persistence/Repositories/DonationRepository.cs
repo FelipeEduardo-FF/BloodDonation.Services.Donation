@@ -23,6 +23,11 @@ namespace BloodDonation.Services.Donations.Infra.Persistence.Repositories
             return await _context.Donations.FindAsync(id);
         }
 
+        public async Task<Donation?> GetLastDonationByDonorIdAsync(int id)
+        {
+            return await _context.Donations.OrderBy(donation=>donation.Id).LastOrDefaultAsync(donation=>donation.DonorId==id);
+        }
+
         public async Task<IEnumerable<Donation>> GetAllAsync()
         {
             return await _context.Donations.ToListAsync();

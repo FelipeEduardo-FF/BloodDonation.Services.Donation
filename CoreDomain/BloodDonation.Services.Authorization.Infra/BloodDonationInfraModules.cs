@@ -8,6 +8,7 @@ using BloodDonation.Services.Donations.Infra.Persistence.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using BloodDonation.Services.Donations.Infra.ExternalServices;
 
 namespace BloodDonation.Services.Donations.Infra
 {
@@ -18,6 +19,7 @@ namespace BloodDonation.Services.Donations.Infra
             services.AddDatabase();
             services.AddRepositories();
             services.AddAuthentication();
+            services.AddServices();
             return services;
         }       
         
@@ -25,6 +27,14 @@ namespace BloodDonation.Services.Donations.Infra
         {
 
             services.AddScoped<IDonationRepository, DonationRepository>();
+
+            return services;
+        }
+
+        private static IServiceCollection AddServices(this IServiceCollection services)
+        {
+
+            services.AddScoped<IDonorService, DonorService>();
 
             return services;
         }

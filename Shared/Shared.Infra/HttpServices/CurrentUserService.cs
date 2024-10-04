@@ -5,23 +5,30 @@ namespace Shared.Infra.HttpServices
 {
     public class CurrentUserService : ICurrentUserService
     {
-
         public CurrentUserService(IHttpContextAccessor httpContextAccessor)
         {
-            var HttpContext = httpContextAccessor.HttpContext;
+            var httpContext = httpContextAccessor.HttpContext;
 
-            if (HttpContext is not null && HttpContext.User is not null && HttpContext.User.Identity.IsAuthenticated)
+            if (httpContext is not null && httpContext.User is not null && httpContext.User.Identity!.IsAuthenticated)
             {
-                 Name = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
-                 Id = HttpContext.User.FindFirst(ClaimTypes.Sid)!.Value;
+                Name = httpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                Id = httpContext.User.FindFirst(ClaimTypes.Sid)?.Value;
+
+
+                if (httpContext.Request.Headers.TryGetValue("Authorization", out var token))
+                {
+
+                    if (token.ToString().StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Token = token.ToString().Substring("Bearer ".Length).Trim();
+                    }
+                }
             }
-
-
         }
 
         public string? Name { get; }
         public string? Id { get; }
-
-
+        public string? Token { get; } // Propriedade para armazenar o token
     }
+
 }

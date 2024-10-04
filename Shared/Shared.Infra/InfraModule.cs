@@ -111,7 +111,7 @@ namespace Shared.Infra
                 .WithTracing(tracingBuilder =>
                 {
                     tracingBuilder
-                        .AddSource(appSettings.Jaeger.ServiceName)  // Adiciona fontes de rastreamento
+                        .AddSource(appSettings?.Jaeger?.ServiceName ?? "DefaultService")  // Adiciona fontes de rastreamento
                         .AddAspNetCoreInstrumentation(options =>
                         {
                             options.RecordException = true;  // Habilita gravação de exceções para requisições ASP.NET Core

@@ -13,6 +13,7 @@ namespace BloodDonation.Services.Donations.Domain.Repositories
         Task<IEnumerable<Donation>> GetAllAsync();
         Task AddAsync(Donation donation);
         Task DeleteAsync(Donation donation);
+        Task<Donation?> GetLastDonationByDonorIdAsync(int id);
     }
 
 }

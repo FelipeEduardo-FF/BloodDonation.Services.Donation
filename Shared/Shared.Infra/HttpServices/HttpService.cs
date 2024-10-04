@@ -136,7 +136,7 @@ namespace Shared.Infra.HttpServices
 
             return new HttpResponseWrapper<object>(null, responseHTTP.IsSuccessStatusCode, responseHTTP);
         }
-        private async Task<T> Deserialize<T>(HttpResponseMessage httpResponse, JsonSerializerOptions options=null)
+        private async Task<T> Deserialize<T>(HttpResponseMessage httpResponse, JsonSerializerOptions options)
         {
             var body = await httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false); 
 
