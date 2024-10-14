@@ -18,7 +18,6 @@ namespace BloodDonation.Services.Donations.Infra
         {
             services.AddDatabase();
             services.AddRepositories();
-            services.AddAuthentication();
             services.AddServices();
             return services;
         }       
@@ -64,30 +63,7 @@ namespace BloodDonation.Services.Donations.Infra
             return app;
         }
 
-        private static IServiceCollection AddAuthentication(this IServiceCollection services)
-        {
-            var serviceProvider = services.BuildServiceProvider();
-            var _configuration = serviceProvider.GetRequiredService<IConfiguration>();
-            // Configurar autenticação JWT
-            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]!);
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateLifetime = false,
-                    ValidateIssuerSigningKey = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
-                };
-            });
-            return services;
-        }
+      
 
     }
 }
