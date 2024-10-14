@@ -19,7 +19,6 @@ namespace BloodDonation.Services.Donations.API.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles ="staff,Adm")]
         public async Task<IActionResult> GetById(int id)
         {
             var result = await _donationService.GetByIdAsync(id);
@@ -31,7 +30,6 @@ namespace BloodDonation.Services.Donations.API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "staff,Adm")]
         public async Task<IActionResult> GetAll()
         {
             var result = await _donationService.GetAllAsync();
@@ -43,7 +41,6 @@ namespace BloodDonation.Services.Donations.API.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "staff,Adm")]
         public async Task<IActionResult> Create(DonationInputModel inputModel)
         {
             var result = await _donationService.CreateAsync(inputModel);
@@ -55,7 +52,6 @@ namespace BloodDonation.Services.Donations.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "staff,Adm")]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _donationService.DeleteAsync(id);
