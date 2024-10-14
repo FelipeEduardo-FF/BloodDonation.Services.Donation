@@ -24,7 +24,6 @@ namespace BloodDonation.Services.Donations.Infra.ExternalServices
 
         public async Task<ApiResponse<Donor>> GetById(int Id)
         {
-            //TODO:tratar erros
             var response = await _httpService.Get<ApiResponse<Donor>>(url + Id);
             return response.Response;
         }
